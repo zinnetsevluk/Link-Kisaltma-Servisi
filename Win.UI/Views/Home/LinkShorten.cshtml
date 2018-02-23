@@ -1,0 +1,21 @@
+﻿@model Win.UI.Models.LinkShortenModel
+<h2>LinkShorten</h2>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <form method="post" class="form-inline text-center">
+        <br><br>
+        <div class="form-group">
+            <label class="sr-only col-sm-4">Link giriniz</label>
+            <input class="form-control" type="text" name="LongLink" placeholder="Link giriniz" required />
+        </div>
+        <button type="submit" class="btn btn-default">Kısalt</button>
+        @if (ViewData["KisaLink"] != null)
+    {
+        <div class="form-group">
+            <input class="form-control" type="text" value=@ViewData["KisaLink"] />
+        </div>
+    }
+    </form>
+</div>

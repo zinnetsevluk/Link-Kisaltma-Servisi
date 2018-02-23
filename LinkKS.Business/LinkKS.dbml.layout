@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinkKS">
+  <DataContextMoniker Name="/LinkKSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2a016cb7-c617-4ed0-9d10-c43ff94f2f46" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/LinkKSDataContext/LINK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29eaa60f-a72b-46a0-9e84-dae99e94d9cf" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="048caaa5-d81a-4259-b5a0-e23c61186cb3" absoluteBounds="6.25, 1.375, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/LinkKSDataContext/LINK_LOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6a1e764-f721-4017-ada3-7820b15f6910" absoluteBounds="6.265, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a71bdd3-c70b-46c9-9fea-2e432285326b" absoluteBounds="0.75, 1.375, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/LinkKSDataContext/USER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ffded61-d0e2-4879-9b7a-7dcd43413a9e" absoluteBounds="0.765, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.35659912109375); (6.25 : 2.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinkKSDataContext/LINK/LINK_LINK_LOG" />
+      <nodes>
+        <classShapeMoniker Id="2a016cb7-c617-4ed0-9d10-c43ff94f2f46" />
+        <classShapeMoniker Id="048caaa5-d81a-4259-b5a0-e23c61186cb3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.35659912109375); (3.5 : 2.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinkKSDataContext/USER/USER_LINK" />
+      <nodes>
+        <classShapeMoniker Id="5a71bdd3-c70b-46c9-9fea-2e432285326b" />
+        <classShapeMoniker Id="2a016cb7-c617-4ed0-9d10-c43ff94f2f46" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

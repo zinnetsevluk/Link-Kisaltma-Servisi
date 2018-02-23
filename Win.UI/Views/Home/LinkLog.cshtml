@@ -1,0 +1,31 @@
+﻿@model Win.UI.Models.LinklogModel
+@using LinkKS.DTO
+@using System.Collections
+<h2>LinkLog</h2>
+
+@{
+    Layout = "~/Views/Shared/Cikis.cshtml";
+}
+<form method="get">
+<div style="padding:25px;text-align:center;">
+
+    <table class="table table-hover">
+        <tr>
+            <td style="font-family:Verdana; font-size:10px; font-weight:bold;" >IP</td>
+            <td style="font-family:Verdana; font-size:10px; font-weight:bold;" >Agent</td>
+            <td style="font-family:Verdana; font-size:10px; font-weight:bold;" >Referrer</td>
+            <td style="font-family:Verdana; font-size:10px; font-weight:bold;" >Date</td>
+        </tr>
+
+        @foreach (DTO_LINK_LOG item in ViewBag.linklog)
+        {
+            <tr>
+                <td>@item.IP</td>
+                <td>@item.Agent</td>
+                <td>@item.Referrer</td>
+                <td>@item.Date</td>
+            </tr>
+
+        }
+    </table>
+</form>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LinkKSservice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:7987/LinkKSservice.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:7987/LinkKSservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:7987/LinkKSservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LinkKS.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILinkKSServiceContract_UserSignUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserSignUp" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UserSignUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserSignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UserSignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserSignIn" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UserSignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserSignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_LinkShorten_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkShorten" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_LinkShorten_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkShortenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_User_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:User_UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_User_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:User_UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkExpireDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkExpireDate" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkExpireDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkExpireDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkNotification" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkOneShot_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkOneShot" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkOneShot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkOneShotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkPassword" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_UpdateLinkPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLinkPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetListLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListLog" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetListLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetLonkLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLonkLink" />
+  </wsdl:message>
+  <wsdl:message name="ILinkKSServiceContract_GetLonkLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLonkLinkResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILinkKSServiceContract">
+    <wsdl:operation name="UserSignUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UserSignUp" message="tns:ILinkKSServiceContract_UserSignUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UserSignUpResponse" message="tns:ILinkKSServiceContract_UserSignUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSignIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UserSignIn" message="tns:ILinkKSServiceContract_UserSignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UserSignInResponse" message="tns:ILinkKSServiceContract_UserSignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkShorten">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/LinkShorten" message="tns:ILinkKSServiceContract_LinkShorten_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/LinkShortenResponse" message="tns:ILinkKSServiceContract_LinkShorten_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/User_UpdateUser" message="tns:ILinkKSServiceContract_User_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/User_UpdateUserResponse" message="tns:ILinkKSServiceContract_User_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkExpireDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkExpireDate" message="tns:ILinkKSServiceContract_UpdateLinkExpireDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkExpireDateResponse" message="tns:ILinkKSServiceContract_UpdateLinkExpireDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkNotification" message="tns:ILinkKSServiceContract_UpdateLinkNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkNotificationResponse" message="tns:ILinkKSServiceContract_UpdateLinkNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkOneShot">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkOneShot" message="tns:ILinkKSServiceContract_UpdateLinkOneShot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkOneShotResponse" message="tns:ILinkKSServiceContract_UpdateLinkOneShot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkPassword" message="tns:ILinkKSServiceContract_UpdateLinkPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/UpdateLinkPasswordResponse" message="tns:ILinkKSServiceContract_UpdateLinkPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetUserProfile" message="tns:ILinkKSServiceContract_GetUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetUserProfileResponse" message="tns:ILinkKSServiceContract_GetUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetList" message="tns:ILinkKSServiceContract_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetListResponse" message="tns:ILinkKSServiceContract_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetListLog" message="tns:ILinkKSServiceContract_GetListLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetListLogResponse" message="tns:ILinkKSServiceContract_GetListLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLonkLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetLonkLink" message="tns:ILinkKSServiceContract_GetLonkLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILinkKSServiceContract/GetLonkLinkResponse" message="tns:ILinkKSServiceContract_GetLonkLink_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILinkKSServiceContract" type="tns:ILinkKSServiceContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserSignUp">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UserSignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSignIn">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UserSignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkShorten">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/LinkShorten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="User_UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/User_UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkExpireDate">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UpdateLinkExpireDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkNotification">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UpdateLinkNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkOneShot">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UpdateLinkOneShot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLinkPassword">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/UpdateLinkPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/GetUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListLog">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/GetListLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLonkLink">
+      <soap:operation soapAction="http://tempuri.org/ILinkKSServiceContract/GetLonkLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LinkKSservice">
+    <wsdl:port name="BasicHttpBinding_ILinkKSServiceContract" binding="tns:BasicHttpBinding_ILinkKSServiceContract">
+      <soap:address location="http://localhost:7987/LinkKSservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

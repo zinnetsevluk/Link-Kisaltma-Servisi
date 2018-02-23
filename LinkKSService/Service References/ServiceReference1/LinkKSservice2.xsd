@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LinkKS.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LinkKS.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:7987/LinkKSservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DTO_USER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTO_USER" nillable="true" type="tns:DTO_USER" />
+  <xs:complexType name="ArrayOfDTO_LINK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DTO_LINK" nillable="true" type="tns:DTO_LINK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDTO_LINK" nillable="true" type="tns:ArrayOfDTO_LINK" />
+  <xs:complexType name="DTO_LINK">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClickCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="STATUS" type="tns:Status" />
+      <xs:element minOccurs="0" name="createDateLink" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="expiredDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="longLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="notification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="oneShot" type="xs:boolean" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shortLink" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTO_LINK" nillable="true" type="tns:DTO_LINK" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfDTO_LINK_LOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DTO_LINK_LOG" nillable="true" type="tns:DTO_LINK_LOG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDTO_LINK_LOG" nillable="true" type="tns:ArrayOfDTO_LINK_LOG" />
+  <xs:complexType name="DTO_LINK_LOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Agent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Referrer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTO_LINK_LOG" nillable="true" type="tns:DTO_LINK_LOG" />
+  <xs:complexType name="DTO_LINK_CONTROL_RESULT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="linkId" type="ser:guid" />
+      <xs:element minOccurs="0" name="longLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="oneShot" type="xs:boolean" />
+      <xs:element minOccurs="0" name="password" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTO_LINK_CONTROL_RESULT" nillable="true" type="tns:DTO_LINK_CONTROL_RESULT" />
+</xs:schema>

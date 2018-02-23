@@ -1,0 +1,37 @@
+﻿@model Win.UI.Models.SignUpModel
+@using LinkKS.DTO
+@{
+    Layout = "~/Views/Shared/Cikis.cshtml";
+}
+<form method="post">
+    <br><br>
+    <div class="form-group row">
+        <label class="control-label col-sm-1">Email</label>
+        <div class="col-sm-4">
+        <input class="form-control" type="email" name="Email" placeholder="@ViewBag.userProfile.EMail" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-sm-1">Adınız</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="Name" placeholder="@ViewBag.userProfile.Name" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-sm-1">Password</label>
+        <div class="col-sm-4">
+         <input class="form-control" type="text" name="password" placeholder="@ViewBag.userProfile.Password"/>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-offset-3 col-md-10">
+            <button class="btn btn-default" type="submit">Kaydet</button>
+        </div>
+    </div>
+</form>
+
+
+
+

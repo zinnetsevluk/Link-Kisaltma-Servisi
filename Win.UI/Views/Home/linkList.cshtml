@@ -1,0 +1,105 @@
+﻿@model Win.UI.Models.LinkListModel
+@using LinkKS.DTO
+
+<div style="padding:25px;text-align:center;">
+
+    <table class="table table-hover">
+            <tr>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">ShortLink</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">LonkLink</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">Password</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">ExpireDate</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">OneShot</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">Notification</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">ClickCount</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">CreateDate</td>
+                <td style= "font-family:Times New Roman; font-size:15px; font-weight:bold;">Status</td>
+            </tr>
+      
+        @foreach (DTO_LINK item in ViewBag.liste)
+        {
+            <tr>
+                <td>@item.shortLink</td>
+                <td>@item.longLink</td>
+                <td>@item.password
+                <a class="btn btn-default" href="/Home/LinkPasswordUpdate/@item.Id" value = "@item.password" role="button">!</a>
+                </td>
+                <td>@item.expiredDate</td>
+                <td>
+                @item.oneShot
+               <button class="btn btn-default"  data-toggle="modal" id="@item.Id" data-target="#myModal" value="@item.Id">!</button>
+               </td>
+                <td><a href="@Url.Action("NotificationUpdate","Home", new { id = item.Id })">@item.notification</a><span class="icon-bar"></span></td>
+                <td>@item.ClickCount</td>
+                <td>@item.createDateLink</td>
+                <td>@item.STATUS</td>
+                <td>
+
+                    @Html.ActionLink("Details", "LinkLog", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+
+</tr>
+
+        }
+
+
+    </table>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Oneshot update</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="checkbox">
+                        @*@if (@item.oneShot)
+                        {*@
+                            <label>
+                                OneShot <input type="checkbox" name="OneShot" id="OneShot">
+                            </label>
+                        @*}
+                        else
+                        {*@
+                            @*<label>
+                                OneShot <input type="checkbox" name="OneShot" id="OneShot">
+                            </label>*@
+                        @*}*@
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                    <button id="saveButton" class="btn btn-success">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+@Html.AntiForgeryToken()
+@section Scripts
+{
+    <script>
+       (function () {
+            $("#saveButton").click(function () {
+                debugger;
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/OneShotUpdate/',
+                    data: { oneShot: document.getElementById("OneShot").checked, id: attr("id") },
+                    success: function () { }
+                });
+
+            });
+
+        });
+        
+    </script>
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b3a300a-83c7-44ae-b376-11c1b59b195a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7987/LinkKSservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LinkKSservice.xsd" MetadataType="Schema" ID="e01b85df-1fbf-4fb5-905d-993388dfe2ec" SourceId="1" SourceUrl="http://localhost:7987/LinkKSservice.svc?xsd=xsd1" />
+    <MetadataFile FileName="LinkKSservice1.xsd" MetadataType="Schema" ID="4b8c6598-f4e5-469f-9162-1f6dc5381b3a" SourceId="1" SourceUrl="http://localhost:7987/LinkKSservice.svc?xsd=xsd0" />
+    <MetadataFile FileName="LinkKSservice.wsdl" MetadataType="Wsdl" ID="91edca51-643f-4eca-a37e-6efec7d009e2" SourceId="1" SourceUrl="http://localhost:7987/LinkKSservice.svc?wsdl" />
+    <MetadataFile FileName="LinkKSservice2.xsd" MetadataType="Schema" ID="342a0047-0e97-46c7-9e6c-9856b08e8e4b" SourceId="1" SourceUrl="http://localhost:7987/LinkKSservice.svc?xsd=xsd2" />
+    <MetadataFile FileName="LinkKSservice.disco" MetadataType="Disco" ID="ef1a8267-eddc-4936-b42d-b3499c275b8f" SourceId="1" SourceUrl="http://localhost:7987/LinkKSservice.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
